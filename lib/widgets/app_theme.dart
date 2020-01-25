@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-final Main_Color = Color(0xFF040623);
+final Main_Color = Color(0xFF0B061C);
 
 final primaryText = TextStyle(
     color: Colors.white,
