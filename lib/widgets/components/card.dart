@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
@@ -13,9 +14,7 @@ class CustomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         margin: EdgeInsets.all(7),
-        decoration: BoxDecoration(
-            color: _getCardColor(),
-            borderRadius: BorderRadius.all(Radius.circular(10))),
+        decoration: kDecorationRoundedEdges.copyWith(color: _getCardColor()),
         child: child);
   }
 }

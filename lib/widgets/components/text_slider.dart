@@ -24,8 +24,8 @@ class TextSlider extends StatelessWidget {
             data: SliderThemeData(
               activeTrackColor: Colors.pink[400],
               inactiveTrackColor: Colors.grey[600],
-              thumbColor: Colors.pink[800],
-              overlayColor: Color(0x30880E4F),
+              thumbColor: kAccentColor,
+              overlayColor: kOverlayColor,
               thumbShape: RoundSliderThumbShape(enabledThumbRadius: 12),
             ),
             child: Slider(onChanged: onChange, value: value, min: 1, max: 100)),

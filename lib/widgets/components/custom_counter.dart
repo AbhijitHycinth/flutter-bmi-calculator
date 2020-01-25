@@ -34,6 +34,7 @@ class CustomCounter extends StatelessWidget {
   Widget build(BuildContext context) {
     String unit = units[label][scale];
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text(label, style: kAgeStyle.copyWith(fontSize: 25)),
         Text('$value $unit', style: kAgeStyle.copyWith(fontSize: 35)),

@@ -21,9 +21,9 @@ class ClickableCard extends StatelessWidget {
       onTap: () {
         _onTap(_text);
       },
-      child: Padding(
-        padding: const EdgeInsets.all(30.0),
+      child: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             Icon(_icon, size: 80.0),
