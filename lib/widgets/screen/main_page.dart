@@ -1,5 +1,5 @@
 import 'package:bmi_calculator/customIcons/gender_icons.dart';
-import 'package:bmi_calculator/styles.dart';
+import 'package:bmi_calculator/widgets/components/calculate_button.dart';
 import 'package:bmi_calculator/widgets/components/card.dart';
 import 'package:bmi_calculator/widgets/components/clickable_card.dart';
 import 'package:bmi_calculator/widgets/components/custom_counter.dart';
@@ -97,30 +97,17 @@ class _MainPageState extends State<MainPage> {
             ),
           ],
         )),
-        Container(
-            decoration: kDecorationRoundedEdges,
-            margin: EdgeInsets.only(top: 10),
-            height: 60,
-            width: double.infinity,
-            child: FlatButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => ResultPage(
-                              height: height,
-                              weight: weight,
-                            )));
-              },
-              color: kAccentColor,
-              child: Text(
-                "CALCULATE",
-                style: kAgeStyle.copyWith(
-                    fontSize: 25,
-                    color: Colors.white,
-                    fontWeight: FontWeight.normal),
-              ),
-            ))
+        CalculateButton(
+            label: "CALCULATE",
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ResultPage(
+                            height: height,
+                            weight: weight,
+                          )));
+            })
       ],
     );
   }
