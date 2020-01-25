@@ -1,6 +1,7 @@
 import 'package:bmi_calculator/customIcons/gender_icons.dart';
 import 'package:bmi_calculator/widgets/components/card.dart';
 import 'package:bmi_calculator/widgets/components/clickable_card.dart';
+import 'package:bmi_calculator/widgets/components/custom_counter.dart';
 import 'package:bmi_calculator/widgets/components/text_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,8 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   String _selectedGender;
   double selectedAge = 20;
+  int weight = 0;
+  int height = 0;
 
   void setGender(String gender) {
     setState(() {
@@ -62,8 +65,35 @@ class _MainPageState extends State<MainPage> {
           )),
         ),
         Expanded(
-            child: CustomCard(
-          child: SizedBox(),
+            child: Row(
+          children: <Widget>[
+            Expanded(
+              child: CustomCard(
+                child: CustomCounter(
+                  label: "weight",
+                  value: weight,
+                  onChange: (value) {
+                    setState(() {
+                      weight = value;
+                    });
+                  },
+                ),
+              ),
+            ),
+            Expanded(
+              child: CustomCard(
+                child: CustomCounter(
+                  label: "height",
+                  value: height,
+                  onChange: (value) {
+                    setState(() {
+                      height = value;
+                    });
+                  },
+                ),
+              ),
+            ),
+          ],
         )),
       ],
     );
