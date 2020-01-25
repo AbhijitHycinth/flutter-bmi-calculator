@@ -64,12 +64,13 @@ class ResultPage extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     comments[_slab],
+                    textAlign: TextAlign.center,
                   ),
                   Text(
                     _result.toStringAsFixed(2),
                     style: kAgeStyle,
                   ),
-                  SlabText(_slab)
+                  _SlabText(_slab)
                 ],
               ),
             ),
@@ -86,7 +87,7 @@ class ResultPage extends StatelessWidget {
   }
 }
 
-class SlabText extends StatelessWidget {
+class _SlabText extends StatelessWidget {
   final bmiSlab _slab;
 
   final Map<bmiSlab, Text> slabTexts = {
@@ -108,7 +109,7 @@ class SlabText extends StatelessWidget {
     )
   };
 
-  SlabText(this._slab);
+  _SlabText(this._slab);
 
   @override
   Widget build(BuildContext context) {
